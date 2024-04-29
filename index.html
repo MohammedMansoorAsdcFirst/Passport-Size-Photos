@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="/path/to/cropper.css" rel="stylesheet">
+    <title>Passport Size Photo App</title>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <a href="index.html">Photo</a>
+            </div>
+            <div class="navContent">
+                <a href="index.html">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </nav>
+        <main>
+            <div class="left">
+                <h3 style="text-decoration: underline;">Select Frames</h3>
+                <div class="leftMainContainer flex">
+
+                    <div class="flex leftMain">
+                        <p id="eightFrame">8 Photos Frame</p>
+                        <input type="file" name="" id="leftInput" class="input" accept=".jpg, .jpeg, .png">
+                        <button id="uploadPhotoBtn">Upload Photo</button>
+                    </div>
+
+                    <div class="flex leftMain">
+                        <p id="fourFrame">4 Photos Frame</p>
+                        <input type="file" name="" id="fourOne" class="input" accept=".jpg, .jpeg, .png">
+                        <input type="file" name="" id="fourTwo" class="input" accept=".jpg, .jpeg, .png">
+                        <button id="uploadOneBtn">Upload Photo</button>
+                        <button id="uploadTwoBtn">Upload Photo</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="right">
+                <div class="rightMain">
+                    <div class="rightMainRight">
+                        <div>
+                            <!-- <input type="file" class="input" > -->
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTkyU72-X0ji5U7vAEhvQqYuARKDjCuaXFTQSJ5WrtAw&s"
+                                alt="" class="img">
+                        </div>
+                        <div>
+                            <!-- <input type="file" class="input"> -->
+                            <img class="img"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTkyU72-X0ji5U7vAEhvQqYuARKDjCuaXFTQSJ5WrtAw&s"
+                                alt="">
+                        </div>
+                        <div>
+                            <!-- <input type="file" class="input"> -->
+                            <img class="img"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTkyU72-X0ji5U7vAEhvQqYuARKDjCuaXFTQSJ5WrtAw&s"
+                                alt="">
+                        </div>
+                        <div>
+                            <!-- <input type="file" class="input"> -->
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTkyU72-X0ji5U7vAEhvQqYuARKDjCuaXFTQSJ5WrtAw&s"
+                                alt="" class="img">
+                        </div>
+                    </div>
+
+                    <div class="rightMainLeft">
+                        <div>
+                            <!-- <input type="file" class="input"> -->
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTkyU72-X0ji5U7vAEhvQqYuARKDjCuaXFTQSJ5WrtAw&s"
+                                alt="" class="img">
+                        </div>
+                        <div>
+                            <!-- <input type="file" class="input"> -->
+                            <img class="img"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTkyU72-X0ji5U7vAEhvQqYuARKDjCuaXFTQSJ5WrtAw&s"
+                                alt="">
+                        </div>
+                        <div>
+                            <!-- <input type="file" class="input"> -->
+                            <img class="img"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTkyU72-X0ji5U7vAEhvQqYuARKDjCuaXFTQSJ5WrtAw&s"
+                                alt="">
+                        </div>
+                        <div>
+                            <!-- <input type="file" class="input"> -->
+                            <img class="img"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTkyU72-X0ji5U7vAEhvQqYuARKDjCuaXFTQSJ5WrtAw&s"
+                                alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="Btn">
+                    <a id="download" download="Passport_Size_Photos.png"><button>Download</button></a>
+                    <button id="printBtn">Print</button>
+                </div>
+            </div>
+            <div class="countDiv">
+                <h1 id="count"></h1>
+                <p>Attempts are Free</p>
+            </div>
+        </main>
+    </div>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script> -->
+    <script src="/path/to/cropper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
