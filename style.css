@@ -112,7 +112,7 @@ main {
   align-items: center;
 }
 
-.countContainer{
+.countContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -167,7 +167,7 @@ main {
   align-items: flex-start; /* Align items to the top */
 }
 
-.rightMainImg{
+.rightMainImg {
   width: 66vw;
   display: flex;
   flex-wrap: wrap;
@@ -279,3 +279,27 @@ main {
 ::-webkit-scrollbar-thumb:hover {
   background: #55555546; /* Color of the scrollbar handle on hover */
 }
+
+.loader {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  border-radius: 50%;
+  border: 6px solid black;
+  border-color: black transparent black transparent;
+  animation: loaderAnimation 0.5s infinite linear; /* Adjusted timing function */
+  display: none;
+}
+
+@keyframes loaderAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

@@ -6,7 +6,13 @@ let downloadBtn = document.querySelector('#download');
 let rightMain = document.querySelector('.rightMain');
 let printBtn = document.querySelector('#printBtn');
 let count = document.querySelector('#count');
-let apiKey = prompt("Enter Your API Key for Validation")
+let loader = document.querySelector('.loader')
+let apiKey = localStorage.getItem('apiKey');
+
+if (apiKey === null || apiKey === undefined) {
+    let apiKeyPrompt = prompt("Enter Your API Key For Validation");
+    localStorage.setItem('apiKey', apiKeyPrompt);
+}
 
 let storedCount = localStorage.getItem('count');
 count.innerHTML = storedCount ? parseInt(storedCount) : 50;
@@ -40,6 +46,8 @@ leftInput.addEventListener('change', (event) => {
             count.innerHTML = currentCount - 1;
             localStorage.setItem('count', parseInt(count.innerHTML));
 
+            loader.style.display = 'block'
+
             fetch('https://api.remove.bg/v1.0/removebg', {
                 method: 'POST',
                 headers: {
@@ -59,7 +67,7 @@ leftInput.addEventListener('change', (event) => {
                     const url = URL.createObjectURL(blob);
                     imgs.forEach((img) => {
                         img.src = url;
-
+                        loader.style.display = 'none'
                     });
                     rightMain.disabled = false;
                     leftInput.disabled = false;
@@ -68,7 +76,7 @@ leftInput.addEventListener('change', (event) => {
                 .catch((error) => {
                     console.error('Error processing image:', error);
                     alert(error);
-
+                    loader.style.display = 'none'
                     rightMain.disabled = false;
                     leftInput.disabled = false;
                     eightFrame.disabled = false;
