@@ -36,6 +36,9 @@ leftInput.addEventListener('change', (event) => {
         reader.onload = function (e) {
             const formData = new FormData();
             formData.append('image_file', file);
+            let currentCount = parseInt(count.innerHTML);
+            count.innerHTML = currentCount - 1;
+            localStorage.setItem('count', parseInt(count.innerHTML));
 
             fetch('https://api.remove.bg/v1.0/removebg', {
                 method: 'POST',
@@ -56,10 +59,7 @@ leftInput.addEventListener('change', (event) => {
                     const url = URL.createObjectURL(blob);
                     imgs.forEach((img) => {
                         img.src = url;
-                        
-                        let currentCount = parseInt(count.innerHTML);
-                        count.innerHTML = currentCount - 1;
-                        localStorage.setItem('count', parseInt(count.innerHTML));
+
                     });
                     rightMain.disabled = false;
                     leftInput.disabled = false;
