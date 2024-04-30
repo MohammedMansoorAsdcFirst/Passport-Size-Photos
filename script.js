@@ -2,14 +2,15 @@ let leftInput = document.querySelector('#leftInput');
 let imgs = document.querySelectorAll('.img');
 let uploadBtn = document.querySelector('#uploadPhotoBtn');
 let eightFrame = document.querySelector('#eightFrame');
-let downloadBtn = document.querySelector('#download');
 let rightMain = document.querySelector('.rightMain');
+let downloadBtn = document.querySelector('#download');
 let printBtn = document.querySelector('#printBtn');
 let count = document.querySelector('#count');
-let loader = document.querySelector('.loader')
+let loader = document.querySelector('.loader');
 let apiKey = localStorage.getItem('apiKey');
 
-if (apiKey === null || apiKey === undefined) {
+// Check if API key is null or undefined, then prompt the user
+if (apiKey===null) {
     let apiKeyPrompt = prompt("Enter Your API Key For Validation");
     localStorage.setItem('apiKey', apiKeyPrompt);
 }
@@ -46,13 +47,12 @@ leftInput.addEventListener('change', (event) => {
             count.innerHTML = currentCount - 1;
             localStorage.setItem('count', parseInt(count.innerHTML));
 
-            loader.style.display = 'block'
+            loader.style.display = 'block';
 
             fetch('https://api.remove.bg/v1.0/removebg', {
                 method: 'POST',
                 headers: {
                     'X-Api-Key': apiKey,
-                    // 'X-Api-Key': 'DGVCf36AwZcc9Zur7dhtSBuW',
                 },
                 body: formData,
             })
@@ -63,11 +63,10 @@ leftInput.addEventListener('change', (event) => {
                     return response.blob();
                 })
                 .then(function (blob) {
-                    console.log(blob);
                     const url = URL.createObjectURL(blob);
                     imgs.forEach((img) => {
                         img.src = url;
-                        loader.style.display = 'none'
+                        loader.style.display = 'none';
                     });
                     rightMain.disabled = false;
                     leftInput.disabled = false;
@@ -76,14 +75,11 @@ leftInput.addEventListener('change', (event) => {
                 .catch((error) => {
                     console.error('Error processing image:', error);
                     alert(error);
-                    loader.style.display = 'none'
+                    loader.style.display = 'none';
                     rightMain.disabled = false;
                     leftInput.disabled = false;
                     eightFrame.disabled = false;
                 });
-            // imgs.forEach((img) => {
-            //     img.src = e.target.result;
-            // });
         };
         reader.readAsDataURL(file);
     }
